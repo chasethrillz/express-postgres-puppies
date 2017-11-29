@@ -13,8 +13,8 @@ function getAllPuppies(req, res, next) {
   db.any('select * from pups')
     .then(function (data) {
       res.status(200)
-        .render('index', {
-          title: 'success',
+        .json('index', {
+          status: 'success',
           data: data,
           message: 'Retrieved ALL puppies'
         });
